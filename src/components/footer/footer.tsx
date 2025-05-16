@@ -26,7 +26,7 @@ export default function Footer() {
   return (
     <footer className="w-full  flex flex-col item-center">
       <section className="flex flex-col xl:flex-row justify-around item-center xl:justify-between bg-[#800117] h-72 px-4 xl:px-32 xl:items-center">
-        <div className=" w-full xl:w-1/2">
+        <div className=" w-full text-white xl:w-1/2">
           <p className="text-xl text-start">STAY UP TO DATE</p>
           <h3 className="text-5xl">Subscribe to our Newsletter</h3>
         </div>

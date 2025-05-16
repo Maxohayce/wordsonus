@@ -3,7 +3,7 @@ import Image from "next/image";
 export default function About() {
   return (
     <div>
-      <section className="flex flex-col items-center justify-center">
+      <section className="flex flex-col items-center justify-center relative">
         <div className="w-full h-128 relative">
           <Image
             alt="about"
@@ -120,14 +120,13 @@ export default function About() {
           <div className="w-64 h-64 absolute z-20">
             <Image
               alt="Anita"
-              src="/images/ceo.png"
-              height={100}
-              width={100}
-              layout="responsive"
-              objectFit="contain"
+              src="/images/chinyere.jpg"
+              layout="fill"
+              objectFit="cover"
+              className="rounded-md"
             />
           </div>
-          <div className="w-64 h-64 relative top-4 left-4 md:left-8 xl:left-20 border-2 border-[#80011f] rounded-lg"></div>
+          <div className="w-64 h-64 relative top-4 left-4 md:left-8 xl:left-8 border-2 border-[#80011f] rounded-lg"></div>
         </div>
 
         <div className="flex flex-col justify-between items-start w-full lg:w-2/5 px-4">

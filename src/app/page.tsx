@@ -1,30 +1,35 @@
+"use client";
+
 import Article from "../components/cards/article";
 import Success from "../components/cards/success";
+import Resource from "../components/cards/resource";
 import Image from "next/image";
+import { useBlog } from "../context/blogcontext";
 
 export default function Home() {
+  const { posts, loading } = useBlog();
   return (
     <main>
       <section className="relative text-white flex flex-col items-center justify-center">
-        <div className="w-full h-lvh">
+        <div className="w-full h-screen relative">
           <Image
             alt="landing"
             src="/images/landing.png"
-            fill={true}
-            objectFit="cover"
+            fill
+            className="object-cover"
           />
         </div>
         <div className=" flex justify-center items-center absolute z-20 top-10 left-0 px-6 sm:px-12 md:px-24 lg:px-36 h-full ">
           <div className="flex flex-col justify-evenly items-start w-full h-4/5 ">
-            <h1 className="text-6xl md:text-7xl w-full md:w-4/5">
+            <h1 className="text-5xl md:text-7xl w-full md:w-4/5">
               Connecting brands with their target audience through authentic
               storytelling
             </h1>
-            <p className="w-4/5 md:w-3/5 text-xl">
+            <p className="w-full md:w-3/5 text-xl">
               Transform your ideas into compelling narratives with Words On Us,
               the leading content development agency in Lagos, Nigeria.
             </p>
-            <div className="w-3/5 md:w-2/5 flex justify-between items-center">
+            <div className="w-4/5 md:w-2/5 flex justify-between items-center">
               <button className="py-3 px-12 bg-[#800117] rounded-3xl">
                 Get in Touch
               </button>
@@ -32,7 +37,7 @@ export default function Home() {
                 Learn more
               </button>
             </div>
-            <div className="flex w-3/5 md:w-2/5 items-center justify-between">
+            <div className="flex w-4/5 md:w-2/5 items-center justify-between">
               <div className="flex relative">
                 <Image
                   alt=""
@@ -81,50 +86,51 @@ export default function Home() {
         </div>
       </section>
       <section className="bg-[#f5f5f5]">
-        <div className="flex flex-col gap-8 md:flex-row justify-between w-full items-center px-6 sm:px-12 md:px-24 xl:px-36 py-32">
-          <div className="w-96 h-64 bg-white flex flex-col justify-between items-center shadow-xl text-center rounded-sm p-8">
-            <Image
-              alt="stg"
-              src="/images/strategy.svg"
-              height={100}
-              width={100}
-            />
-            <h5>content strategy</h5>
-            <p>
-              Tailored strategies that amplify your brand’s message and drive
-              meaningful audience engagement.
-            </p>
-          </div>
-          <div className="w-96 h-64 bg-white flex flex-col justify-between items-center shadow-xl text-center rounded-sm p-8">
-            <Image
-              alt="mgm"
-              src="/images/management.svg"
-              height={100}
-              width={100}
-            />
-            <h5>Social Media management</h5>
-            <p>
-              Elevating your online presence with expert curation and
-              data-driven social media management.
-            </p>
-          </div>
-          <div className="w-96 h-64 bg-white flex flex-col justify-between items-center shadow-xl text-center rounded-sm p-8">
-            <Image
-              alt="crt"
-              src="/images/creation.svg"
-              height={100}
-              width={100}
-            />
-            <h5>content creation</h5>
-            <p>
-              High-quality content developed to captivate, engage, and turn
-              viewers into a loyal audience.
-            </p>
-          </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 px-4 sm:px-8 md:px-24 xl:px-36 py-20">
+          {[
+            {
+              title: "content strategy",
+              desc: "Tailored strategies that amplify your brand’s message and drive meaningful audience engagement.",
+              img: "strategy",
+            },
+            {
+              title: "Social Media management",
+              desc: "Elevating your online presence with expert curation and data-driven social media management.",
+              img: "management",
+            },
+            {
+              title: "content creation",
+              desc: "High-quality content developed to captivate, engage, and turn viewers into a loyal audience.",
+              img: "creation",
+            },
+          ].map((card, index) => (
+            <div
+              key={index}
+              className="bg-white flex flex-col justify-between items-center shadow-xl text-center rounded-md px-8 py-4"
+            >
+              <Image
+                alt={card.title}
+                src={`/images/${card.img.toLowerCase().replace(/ /g, "")}.svg`}
+                height={100}
+                width={100}
+              />
+              <h5 className="text-lg font-semibold mt-4">{card.title}</h5>
+              <p className="mt-2 text-md">{card.desc}</p>
+            </div>
+          ))}
         </div>
+
         <div className="flex flex-col md:flex-row justify-between items-center px-6 sm:px-12 md:px-24 xl:px-36 pb-28">
           <div className="relative md:ml-20 mb-12 md:mb-0">
-            <div className="w-96 h-128">
+            <div className="absolute z-0 h-56 w-40 top-0 left-72">
+              <Image
+                alt="group-dot"
+                src="/images/groupdot.svg"
+                fill={true}
+                objectFit="cover"
+              />
+            </div>
+            <div className="w-96 z-20 h-128">
               <Image
                 alt="brand"
                 src="/images/brand.png"
@@ -133,9 +139,9 @@ export default function Home() {
               />
             </div>
             <span className="bg-[#800117] rounded-full absolute z-20 h-36 w-36 p-6 text-white top-96 right-80 flex flex-col justify-between items-center">
-              <h3>10</h3>
+              <h3>5+</h3>
               <p>
-                Years of <br /> Success
+                Years of <br /> efficiency
               </p>
             </span>
           </div>
@@ -156,7 +162,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <div className="bg-[#800117] text-white py-12 px-6 md:px-24 xl:px-36 flex flex-col md:flex-row items-center justify-around text-center mb-12">
+      <div className="bg-[#800117] text-white py-12  px-6 sm:px-12 md:px-24 lg:px-36 flex flex-col md:flex-row items-center justify-around text-center mb-12">
         {[
           { number: "120K+", text: "Clients worldwide" },
           { number: "200K+", text: "Projects completed" },
@@ -173,10 +179,10 @@ export default function Home() {
           </div>
         ))}
       </div>
-      <section className="flex flex-col justify-between items-center px-36 text-center h-auto">
+      <section className="flex flex-col justify-between items-center px-6 sm:px-12 md:px-24 lg:px-36 text-center h-auto">
         <h5>service</h5>
         <h3>What we Offer</h3>
-        <p className="w-3/4">
+        <p className="md:w-3/4">
           Elevate your brand&apos;s narrative with our comprehensive content
           development services. Our experts combine creativity and strategy to
           produce high-quality content that informs, educates, and inspires.
@@ -272,7 +278,7 @@ export default function Home() {
         </div>
       </section>
       <section>
-        <div className="flex flex-col gap-8 md:flex-row justify-between items-center px-36 py-28">
+        <div className="flex flex-col gap-8 md:flex-row justify-between items-center px-6 sm:px-12 md:px-24 lg:px-36 py-28">
           <div className="flex flex-col justify-between items-start h-80 w-[32rem]">
             <h5>about us</h5>
             <h3>Content Development agency</h3>
@@ -288,6 +294,14 @@ export default function Home() {
             </button>
           </div>
           <div className="relative">
+            <span className="absolute z-0 h-56 w-36 top-72 left-72">
+              <Image
+                alt="groupdot"
+                src="/images/groupdot.svg"
+                fill={true}
+                objectFit="cover"
+              />
+            </span>
             <div className="w-96 h-128">
               <Image
                 alt="brand"
@@ -311,7 +325,7 @@ export default function Home() {
             </span>
           </div>
         </div>
-        <div className="flex justify-between items-center w-full px-36">
+        <div className="flex justify-between items-center w-full px-6 sm:px-12 md:px-24 lg:px-36">
           <div>
             <h5>portfolio</h5>
             <h3>Our Amazing Works</h3>
@@ -383,9 +397,29 @@ export default function Home() {
           <p>Stay up-to-date with Industry Insights</p>
         </div>
         <div className="flex flex-col md:flex-row justify-between items-center w-full py-16">
-          <Article />
-          <Article />
-          <Article />
+          {loading ? (
+            <p>Loading...</p>
+          ) : posts.length > 0 ? (
+            posts.slice(0, 3).map((post) => (
+              <div key={post.id} className="cursor-pointer">
+                <Article post={post} />
+              </div>
+            ))
+          ) : (
+            <p>No posts available.</p>
+          )}
+        </div>
+        <div className="flex flex-col justify-between items-start w-full">
+          <h3>Resources</h3>
+          <p className="w-4/5 md:w-1/3">
+            Free Resources to Enhance Your Content E-books, whitepapers,
+            webinars, or other downloadable resources
+          </p>
+        </div>
+        <div className="flex flex-col md:flex-row justify-between items-center w-full py-16">
+          <Resource pic="/images/firstresource.png" />
+          <Resource pic="/images/2ndresource.png" />
+          <Resource pic="/images/3rdresource.png" />
         </div>
       </section>
     </main>
