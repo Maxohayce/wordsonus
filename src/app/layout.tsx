@@ -8,7 +8,7 @@ import Nav from "../components/nav/nav";
 import Footer from "../components/footer/footer";
 // import { PropsWithChildren } from "react";
 import { cn } from "../lib/utils";
-import { BlogProvider } from "../context/blogcontext";
+import { BlogProvider } from "../context/BlogProvider";
 
 const manrope = Manrope({ subsets: ["latin"], variable: "--font-manrope" });
 

@@ -4,7 +4,7 @@ import Article from "../components/cards/article";
 import Success from "../components/cards/success";
 import Resource from "../components/cards/resource";
 import Image from "next/image";
-import { useBlog } from "../context/blogcontext";
+import { useBlog } from "../context/BlogProvider";
 
 export default function Home() {
   const { posts, loading } = useBlog();
