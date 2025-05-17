@@ -53,26 +53,53 @@ export default function BlogPage() {
             </div>
             <div className="relative w-full  h-96 mt-8 mx-auto">
               <Image
-                alt="selectedarticlebg"
+                alt="selected-article"
                 src={selectedPost.featuredImage.node.sourceUrl}
                 fill
                 className="object-contain"
               />
             </div>
-            <div className="flex justify-between items-center py-8  w-full md:w-3/5 px-6 sm:px-12 md:px-24 lg:px-36 bg-red-500">
+            <div className="flex items-center py-8   px-6 sm:px-12 md:px-24 lg:px-36 ">
               <Image
                 alt=" strategy"
-                src="/images/star.svg"
+                src="/images/ellipse 29.png"
                 height={50}
                 width={50}
               />
-              <div className="flex flex-col w-2/3  items-start justify-center">
+              <div className=" flex flex-col w-full md:w-1/3  items-start justify-center ml-8">
                 <h5>WRITTEN BY</h5>
                 <p>John Birmingham</p>
                 <p>
                   COO at Team. Author of the upcoming book on Team Management
                   and Leadership.
                 </p>
+              </div>
+            </div>
+            <div className="flex flex-col items-start justify-between py-8   px-6 sm:px-12 md:px-24 lg:px-36">
+              <h5>Join the Conversation</h5>
+              <div className="flex flex-col md:flex-row w-full md:items-start justify-start mt-4 ">
+                <Image
+                  alt=" strategy"
+                  src="/images/ellipse 30.png"
+                  height={50}
+                  width={50}
+                  className="mb-4"
+                />
+                <div className="w-full flex flex-col md:ml-8">
+                  <textarea
+                    className="w-full border-2 px-4 py-4 rounded mb-4"
+                    rows={4}
+                    value="Comment"
+                    // onChange={(e) => setComment(e.target.value)}
+                    required
+                  />
+                  <button
+                    type="submit"
+                    className="bg-[#800117] text-white px-4 py-2 rounded-md md:w-[20rem] self-end hover:bg-red-700"
+                  >
+                    Submit
+                  </button>
+                </div>
               </div>
             </div>
           </div>

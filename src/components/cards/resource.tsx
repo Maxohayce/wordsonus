@@ -16,8 +16,8 @@ export default function Resource({ pic }) {
         </h5>
         <div className="flex justify-end items-center w-full">
           <Image
-            alt="avatar"
-            src="/Images/download.svg"
+            alt="download"
+            src="/images/download.svg"
             height={40}
             width={40}
           />
