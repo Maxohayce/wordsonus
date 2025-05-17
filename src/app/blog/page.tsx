@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Image from "next/image";
-import { useBlog } from "../../context/blogcontext";
+import { useBlog } from "../../context/BlogContext";
 import Article from "../../components/cards/article";
 
 export default function BlogPage() {
