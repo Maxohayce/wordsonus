@@ -9,6 +9,7 @@ import Footer from "../components/footer/footer";
 // import { PropsWithChildren } from "react";
 import { cn } from "../lib/utils";
 import { BlogProvider } from "../context/BlogProvider";
+import WhatsAppButton from "../components/whatsapp/whatsapp";
 
 const manrope = Manrope({ subsets: ["latin"], variable: "--font-manrope" });
 
@@ -29,6 +30,7 @@ export default function RootLayout({ children }) {
           {children}
         </BlogProvider>
         <Footer />
+        <WhatsAppButton />
       </body>
     </html>
   );

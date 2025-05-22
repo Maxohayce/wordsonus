@@ -1,8 +1,8 @@
 "use client";
 
 import Article from "../components/cards/article";
-import Success from "../components/cards/success";
 import Resource from "../components/cards/resource";
+import TestimonialsCarousel from "../components/carousel/TestimonialsCrousel";
 import Image from "next/image";
 import { useBlog } from "../context/BlogProvider";
 
@@ -21,11 +21,11 @@ export default function Home() {
         </div>
         <div className=" flex justify-center items-center absolute z-20 top-10 left-0 px-6 sm:px-12 md:px-24 lg:px-36 h-full ">
           <div className="flex flex-col justify-evenly items-start w-full h-4/5 ">
-            <h1 className="text-5xl md:text-7xl w-full md:w-4/5">
+            <h1 className="text-4xl md:text-6xl w-full md:w-4/6">
               Connecting brands with their target audience through authentic
               storytelling
             </h1>
-            <p className="w-full md:w-3/5 text-xl">
+            <p className="w-5/6 md:w-3/6 text-xl">
               Transform your ideas into compelling narratives with Words On Us,
               the leading content development agency in Lagos, Nigeria.
             </p>
@@ -148,13 +148,15 @@ export default function Home() {
           <div className="flex flex-col justify-between items-start h-80 w-[32rem]">
             <h3>Elevate Your Brand Story</h3>
             <p>
-              At Words on Us, we believe in the power of storytelling to elevate
-              brands and connect them with their target audience.
+              We believe in the power of storytelling to increase brand
+              visibility and connect you with your target audience. We know that
+              your brand is online to be seen and heard, and we know how to make
+              it happen.
             </p>
             <p>
-              Whether you&apos;re a corporate giant, a startup, or an individual
-              professional, our expert team is here to craft content that not
-              only engages but delivers results.
+              Whether you&apos;re a small business, a startup, or an individual
+              professional, the Words on Us team is dedicated to developing
+              content that not only engages but also converts.
             </p>
             <button className="py-3 px-12 bg-[#800117] text-white rounded-3xl">
               Learn More
@@ -162,30 +164,37 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <div className="bg-[#800117] text-white py-12  px-6 sm:px-12 md:px-24 lg:px-36 flex flex-col md:flex-row items-center justify-around text-center mb-12">
+      <div className="bg-[#800117] text-white py-12  px-6 sm:px-12 md:px-24 lg:px-72 flex flex-row items-center justify-around text-center mb-12">
         {[
-          { number: "120K+", text: "Clients worldwide" },
-          { number: "200K+", text: "Projects completed" },
-          { number: "100K+", text: "Satisfied clients" },
+          {
+            url: "https://www.instagram.com/wordsonus/ ",
+            text: "/images/instagram.svg",
+          },
+          {
+            url: "https://www.facebook.com/words.onus ",
+            text: "/images/facebook.svg",
+          },
+          {
+            url: "https://ng.linkedin.com/company/wordsonus ",
+            text: "/images/linkedIn.svg",
+          },
+          {
+            url: "https://www.tiktok.com/@wordsonus.content ",
+            text: "/images/tiktok.svg",
+          },
         ].map((stat, index) => (
-          <div
-            key={index}
-            className="mb-4 md:mb-0 xl:flex flex-row items-center justify-between xl:w-1/5"
-          >
-            <h3 className="text-2xl md:text-4xl xl:text-5xl font-bold">
-              {stat.number}
-            </h3>
-            <p className="text-sm md:text-lg text-end">{stat.text}</p>
-          </div>
+          <a href={stat.url} key={index}>
+            <Image alt={stat.text} src={stat.text} height={50} width={50} />
+          </a>
         ))}
       </div>
       <section className="flex flex-col justify-between items-center px-6 sm:px-12 md:px-24 lg:px-36 text-center h-auto">
         <h5>service</h5>
         <h3>What we Offer</h3>
         <p className="md:w-3/4">
-          Elevate your brand&apos;s narrative with our comprehensive content
-          development services. Our experts combine creativity and strategy to
-          produce high-quality content that informs, educates, and inspires.
+          With the following comprehensive content development services, the
+          Words on Us team combines creativity and strategy to achieve our goal
+          of connecting brands to their target audience
         </p>
         <div className="flex flex-col md:flex-row justify-between flex-wrap mt-16">
           <div className="w-96 h-80 bg-white flex flex-col justify-evenly items-center shadow-xl text-start rounded-sm px-8 mb-12">
@@ -202,8 +211,8 @@ export default function Home() {
             </div>
             <p>
               Align Your Message, Amplify Your Impact. We develop comprehensive
-              content strategies that align with your business goals and target
-              audience.
+              content strategies that align with your business goals and engage
+              your target audience.
             </p>
           </div>
           <div className="w-96 h-80 bg-white flex flex-col justify-evenly items-center shadow-xl text-start rounded-sm px-8 mb-12">
@@ -219,8 +228,9 @@ export default function Home() {
               </h5>
             </div>
             <p>
-              We&apos;ll manage your social media accounts, create engaging
-              content, and grow your online community.
+              We&apos;ll manage your social media accounts from the professional
+              platforms to the entertainment platforms, we’ll create engaging
+              content, and build a loyal online community.
             </p>
           </div>
           <div className="w-96 h-80 bg-white flex flex-col justify-evenly items-center shadow-xl text-start rounded-sm px-8 mb-12">
@@ -236,9 +246,9 @@ export default function Home() {
               </h5>
             </div>
             <p>
-              Align Your Message, Amplify Your ImpactWe develop comprehensive
-              content strategies that align with your business goals and target
-              audience.
+              We’ll provide consultation services to help you develop an
+              effective social media strategy, and train your team to capture
+              the moments that make an impact on viewers’ minds.
             </p>
           </div>
           <div className="w-96 h-80 bg-white flex flex-col justify-evenly items-center shadow-xl text-start rounded-sm px-12 mb-12">
@@ -254,8 +264,9 @@ export default function Home() {
               </h5>
             </div>
             <p>
-              Our team crafts high-quality content that captivates your audience
-              and drives results.
+              We develop visual content that grabs attention. The Words on Us
+              team is equipped to shoot content that converts, for both goods
+              and services.
             </p>
           </div>
           <div className="w-96 h-80 bg-white flex flex-col justify-evenly items-center shadow-xl text-start rounded-sm px-12">
@@ -271,23 +282,27 @@ export default function Home() {
               </h5>
             </div>
             <p>
-              Our experienced writers deliver well-researched, engaging content
-              that meets your needs.
+              The Words on Us team includes incredible writers who can take your
+              message and turn it into content that people actually enjoy
+              reading; whether as social media captions, blog articles,
+              newsletters, books or scripts.
             </p>
           </div>
         </div>
       </section>
       <section>
         <div className="flex flex-col gap-8 md:flex-row justify-between items-center px-6 sm:px-12 md:px-24 lg:px-36 py-28">
-          <div className="flex flex-col justify-between items-start h-80 w-[32rem]">
+          <div className="flex flex-col justify-between items-start h-96 w-[32rem]">
             <h5>about us</h5>
-            <h3>Content Development agency</h3>
+            <h3>Bridging the Gap Between Ideas and Expression</h3>
 
             <p>
-              Found in Lagos,Words On Us was created to help businesses and
-              professionals tell their stories and more effectively. We
-              understand the importance of clear, creative, and compelling
-              content in today’s digital world.
+              In today’s digital marketplace, visibility is currency. With
+              technology at the core of modern business, your ability to
+              communicate clearly and effectively across digital platforms can
+              make or break your brand. At Words on Us, we help businesses and
+              individuals express their message with clarity, creativity, and
+              strategy.
             </p>
             <button className="py-3 px-12 bg-[#800117] text-white rounded-3xl">
               Learn More
@@ -325,78 +340,15 @@ export default function Home() {
             </span>
           </div>
         </div>
-        <div className="flex justify-between items-center w-full px-6 sm:px-12 md:px-24 lg:px-36">
-          <div>
-            <h5>portfolio</h5>
-            <h3>Our Amazing Works</h3>
-            <p>Explore real results from our clients</p>
-          </div>
-          <div className="flex items-center justify-between w-28">
-            <Image
-              alt="arrow_back"
-              src="/images/arrow_back.svg"
-              width={50}
-              height={50}
-              className="border-2 border-[#800117] rounded-full"
-            />
-            <Image
-              alt="arrow_forward"
-              src="/images/arrow_forward.svg"
-              width={50}
-              height={50}
-              className="rounded-full bg-[#800117]"
-            />
-          </div>
-        </div>
-        <div className="flex flex-col h-[65rem] md:h-auto md:flex-row justify-between items-center w-full my-20 px-6 sm:px-12 md:px-24 xl:px-36 ">
-          <div className="bg-red-500 h-60 w-96">
-            <Image
-              alt="work1"
-              src="/images/works1.png"
-              width={100}
-              height={100}
-              layout="responsive"
-              objectFit="contain"
-            />
-          </div>
-          <div className="h-60 w-96">
-            <Image
-              alt="work2"
-              src="/images/works2.png"
-              width={100}
-              height={100}
-              layout="responsive"
-              objectFit="contain"
-            />
-          </div>
-          <div className="h-60 w-auto">
-            <Image
-              alt="work3"
-              src="/images/works3.png"
-              width={100}
-              height={100}
-              layout="responsive"
-              objectFit="contain"
-            />
-          </div>
-        </div>
       </section>
-      <section className="flex flex-col items-center px-6 sm:px-12 md:px-24 xl:px-36 ">
-        <div className="flex flex-col justify-between items-center">
-          <h5>testimonials</h5>
-          <h3>Our Clients Success Stories</h3>
-        </div>
-        <div className="flex flex-col md:flex-row justify-between items-center w-full py-16">
-          <Success />
-          <Success />
-          <Success />
-        </div>
-        <div className="flex flex-col justify-between items-center">
+      <section className="flex flex-col items-center">
+        <TestimonialsCarousel />
+        <div className="flex flex-col justify-between items-center ">
           <h5>blog</h5>
           <h3>Our Recent News</h3>
           <p>Stay up-to-date with Industry Insights</p>
         </div>
-        <div className="flex flex-col md:flex-row justify-between items-center w-full py-16">
+        <div className="flex flex-col md:flex-row justify-between items-center w-full py-16  px-6 sm:px-12 md:px-24 lg:px-36 ">
           {loading ? (
             <p>Loading...</p>
           ) : posts.length > 0 ? (
@@ -409,14 +361,14 @@ export default function Home() {
             <p>No posts available.</p>
           )}
         </div>
-        <div className="flex flex-col justify-between items-start w-full">
+        <div className="flex flex-col justify-between items-start w-full  px-6 sm:px-12 md:px-24 lg:px-36 ">
           <h3>Resources</h3>
           <p className="w-4/5 md:w-1/3">
             Free Resources to Enhance Your Content E-books, whitepapers,
             webinars, or other downloadable resources
           </p>
         </div>
-        <div className="flex flex-col md:flex-row justify-between items-center w-full py-16">
+        <div className="flex flex-col md:flex-row justify-between items-center w-full py-8  px-6 sm:px-12 md:px-24 lg:px-36 ">
           <Resource pic="/images/firstresource.png" />
           <Resource pic="/images/2ndresource.png" />
           <Resource pic="/images/3rdresource.png" />

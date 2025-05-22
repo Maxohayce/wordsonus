@@ -26,9 +26,9 @@ export default function Footer() {
   return (
     <footer className="w-full  flex flex-col item-center">
       <section className="flex flex-col xl:flex-row justify-around item-center xl:justify-between bg-[#800117] h-72 px-4 xl:px-32 xl:items-center">
-        <div className=" w-full text-white xl:w-1/2">
+        <div className="flex flex-col justify-start  h-20 w-full text-white xl:w-1/2">
           <p className="text-xl text-start">STAY UP TO DATE</p>
-          <h3 className="text-5xl">Subscribe to our Newsletter</h3>
+          <h3 className="text-4xl mt-2">Subscribe to our Newsletter</h3>
         </div>
         <div className="w-full xl:w-1/2 flex">
           <input
@@ -76,6 +76,39 @@ export default function Footer() {
                 {item}
               </li>
             ))}
+            <div className="flex w-full md:w-4/5 justify-between">
+              {[
+                {
+                  url: "https://www.instagram.com/wordsonus/ ",
+                  text: "/images/instagram.svg",
+                },
+                {
+                  url: "https://www.facebook.com/words.onus ",
+                  text: "/images/facebook.svg",
+                },
+                {
+                  url: "",
+                  text: "/images/twitter.svg",
+                },
+                {
+                  url: "https://ng.linkedin.com/company/wordsonus ",
+                  text: "/images/linkedIn.svg",
+                },
+              ].map((stat, index) => (
+                <a
+                  href={stat.url}
+                  key={index}
+                  className="mb-4 md:mb-0 xl:flex flex-row items-center justify-between pt-1"
+                >
+                  <Image
+                    alt={stat.text}
+                    src={stat.text}
+                    height={20}
+                    width={20}
+                  />
+                </a>
+              ))}
+            </div>
           </ul>
         </div>
       </section>
