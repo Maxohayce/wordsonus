@@ -49,6 +49,7 @@ export default function CommentBox({ postId }: { postId: number }) {
         setError(data.error || "Failed to post comment.");
       }
     } catch (err) {
+      console.log(err);
       setError("Something went wrong. Please try again.");
     }
   };
