@@ -10,7 +10,6 @@ const navItems = [
   { id: 3, label: "Services", href: Routes.services },
   { id: 4, label: "Blog", href: Routes.blog },
   { id: 5, label: "Resources", href: Routes.resources },
-  { id: 6, label: "Contact", href: Routes.contact },
 ];
 
 export default function Nav() {
@@ -21,24 +20,26 @@ export default function Nav() {
       {/* Logo */}
       <div className="p-3 flex">
         <Link href="/">
-          <Image src="/images/navlogo.png" alt="logo" width={49} height={47} />
+          <Image src="/images/navlogo.png" alt="logo" width={50} height={50} />
         </Link>
       </div>
 
       {/* Desktop Menu */}
       <div className="hidden md:flex w-4/6 justify-between items-center">
-        <ul className="flex justify-between text-white w-5/6">
+        <ul className="flex justify-between items-center text-white w-full">
           {navItems.map((item) => (
             <li key={item.id}>
-              <Link href={item.href} className="hover:text-gray-400">
+              <Link href={item.href} className="hover:text-[#800117] font-bold">
                 {item.label}
               </Link>
             </li>
           ))}
+          <button className="text-white border-2 border-white rounded-3xl py-3 px-12 bg-[#800117] font-bold hover:bg-white hover:text-[#800117]">
+            <Link href="/#contact" scroll={true}>
+              Contact Us
+            </Link>
+          </button>
         </ul>
-        <button className="text-white border-2 border-white rounded-3xl py-1 px-6 ml-4 bg-[#800117]">
-          <Link href="/SignUp"> Sign Up</Link>
-        </button>
       </div>
 
       {/* Mobile Menu Button */}
@@ -63,7 +64,7 @@ export default function Nav() {
             </Link>
           ))}
           <button className="mt-4 text-white border-2 border-white rounded-3xl py-2 px-6 bg-[#800117]">
-            <Link href="/SignUp">Sign Up</Link>
+            <Link href="/#contact">Contact Us</Link>
           </button>
         </div>
       )}

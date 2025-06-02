@@ -8,7 +8,7 @@ import {
   useState,
   ReactNode,
 } from "react";
-import { getPosts } from "../api/fetchposts";
+import { getPosts } from "../app/api/fetchposts";
 
 // Reuse this type from your fetchPosts file or define it here
 type Post = {

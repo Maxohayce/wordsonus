@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function About() {
   return (
-    <div>
+    <div className="mt-20">
       <section className="flex flex-col items-center justify-center relative">
         <div className="w-full h-128 relative">
           <Image
@@ -214,7 +214,7 @@ export default function About() {
             with. If the work isn’t excellent, I won’t put it out; that’s the
             standard we keep around here.
           </p>
-          <span className="h-2 w-20 bg-[#80011f] rounded-md mt-4"></span>
+          <span className="h-2 w-24 sm:w-32 bg-[#80011f] rounded-md mt-8"></span>
         </div>
       </section>
     </div>

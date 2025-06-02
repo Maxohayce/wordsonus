@@ -3,6 +3,5 @@ export const Routes = {
   about: "/about",
   services: "#",
   blog: "/blog",
-  resources: "/#",
-  contact: "#",
+  resources: "/resources",
 };

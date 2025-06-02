@@ -5,12 +5,13 @@ import Resource from "../components/cards/resource";
 import TestimonialsCarousel from "../components/carousel/TestimonialsCrousel";
 import Image from "next/image";
 import { useBlog } from "../context/BlogProvider";
+import Link from "next/link";
 
 export default function Home() {
   const { posts, loading } = useBlog();
   return (
     <main>
-      <section className="relative text-white flex flex-col items-center justify-center">
+      <section className="relative text-white flex flex-col items-center justify-center mt-20">
         <div className="w-full h-screen relative">
           <Image
             alt="landing"
@@ -19,7 +20,7 @@ export default function Home() {
             className="object-cover"
           />
         </div>
-        <div className=" flex justify-center items-center absolute z-20 top-10 left-0 px-6 sm:px-12 md:px-24 lg:px-36 h-full ">
+        <div className=" flex justify-center items-center absolute z-20 top-0 left-0 px-6 sm:px-12 md:px-24 lg:px-36 h-full ">
           <div className="flex flex-col justify-evenly items-start w-full h-4/5 ">
             <h1 className="text-4xl md:text-6xl w-full md:w-4/6">
               Connecting brands with their target audience through authentic
@@ -30,10 +31,10 @@ export default function Home() {
               the leading content development agency in Lagos, Nigeria.
             </p>
             <div className="w-4/5 md:w-2/5 flex justify-between items-center">
-              <button className="py-3 px-12 bg-[#800117] rounded-3xl">
+              <button className="py-3 px-12 bg-[#800117] font-bold rounded-3xl hover:bg-white hover:text-[#800117]">
                 Get in Touch
               </button>
-              <button className="py-2 px-12 bg-inherit border-2 border-white  rounded-3xl text-white">
+              <button className="py-3 px-12 bg-inherit font-bold  border-2 border-white  rounded-3xl text-white hover:text-[#800117] hover:bg-white">
                 Learn more
               </button>
             </div>
@@ -80,7 +81,7 @@ export default function Home() {
                   className="z-10 top-0 ml-32"
                 />
               </div>
-              <p>+120k satisfied clients</p>
+              <p>+20k satisfied clients</p>
             </div>
           </div>
         </div>
@@ -158,13 +159,14 @@ export default function Home() {
               professional, the Words on Us team is dedicated to developing
               content that not only engages but also converts.
             </p>
-            <button className="py-3 px-12 bg-[#800117] text-white rounded-3xl">
-              Learn More
-            </button>
+            <button className="py-3 px-12 bg-[#800117] font-bold  text-white rounded-3xl hover:text-black"></button>
           </div>
         </div>
       </section>
-      <div className="bg-[#800117] text-white py-12  px-6 sm:px-12 md:px-24 lg:px-72 flex flex-row items-center justify-around text-center mb-12">
+      <section
+        id="contact"
+        className="bg-[#800117] text-white py-12  px-6 sm:px-12 md:px-24 lg:px-72 flex flex-row items-center justify-around text-center scroll-mt-16"
+      >
         {[
           {
             url: "https://www.instagram.com/wordsonus/ ",
@@ -187,7 +189,7 @@ export default function Home() {
             <Image alt={stat.text} src={stat.text} height={50} width={50} />
           </a>
         ))}
-      </div>
+      </section>
       <section className="flex flex-col justify-between items-center px-6 sm:px-12 md:px-24 lg:px-36 text-center h-auto">
         <h5>service</h5>
         <h3>What we Offer</h3>
@@ -304,9 +306,7 @@ export default function Home() {
               individuals express their message with clarity, creativity, and
               strategy.
             </p>
-            <button className="py-3 px-12 bg-[#800117] text-white rounded-3xl">
-              Learn More
-            </button>
+            <button className="py-3 px-12 bg-[#800117] text-white rounded-3xl"></button>
           </div>
           <div className="relative">
             <span className="absolute z-0 h-56 w-36 top-72 left-72">
@@ -348,18 +348,23 @@ export default function Home() {
           <h3>Our Recent News</h3>
           <p>Stay up-to-date with Industry Insights</p>
         </div>
-        <div className="flex flex-col md:flex-row justify-between items-center w-full py-16  px-6 sm:px-12 md:px-24 lg:px-36 ">
-          {loading ? (
-            <p>Loading...</p>
-          ) : posts.length > 0 ? (
-            posts.slice(0, 3).map((post) => (
-              <div key={post.id} className="cursor-pointer">
-                <Article post={post} />
-              </div>
-            ))
-          ) : (
-            <p>No posts available.</p>
-          )}
+        <div className="flex flex-col justify-between py-16  px-6 sm:px-12 md:px-24 lg:px-36">
+          <div className="flex flex-col md:flex-row justify-between gap-8 items-center w-full ">
+            {loading ? (
+              <p>Loading...</p>
+            ) : posts.length > 0 ? (
+              posts.slice(0, 3).map((post) => (
+                <div key={post.id} className="cursor-pointer">
+                  <Article post={post} />
+                </div>
+              ))
+            ) : (
+              <p>No posts available.</p>
+            )}
+          </div>
+          <button className="py-3 px-12 mt-4 font-bold text-white rounded-3xl bg-[#800117] hover:text-black  self-end">
+            <Link href="/blog"> Visit blog {">>>"} </Link>
+          </button>
         </div>
         <div className="flex flex-col justify-between items-start w-full  px-6 sm:px-12 md:px-24 lg:px-36 ">
           <h3>Resources</h3>
@@ -368,10 +373,15 @@ export default function Home() {
             webinars, or other downloadable resources
           </p>
         </div>
-        <div className="flex flex-col md:flex-row justify-between items-center w-full py-8  px-6 sm:px-12 md:px-24 lg:px-36 ">
-          <Resource pic="/images/firstresource.png" />
-          <Resource pic="/images/2ndresource.png" />
-          <Resource pic="/images/3rdresource.png" />
+        <div className="flex flex-col justify-between items-center py-8  px-6 sm:px-12 md:px-24 lg:px-36">
+          <div className="flex flex-col md:flex-row justify-between gap-8 items-center w-full">
+            <Resource pic="/images/firstresource.png" />
+            <Resource pic="/images/2ndresource.png" />
+            <Resource pic="/images/3rdresource.png" />
+          </div>
+          <button className="py-3 px-12 mt-4 font-bold text-white rounded-3xl bg-[#800117] hover:text-black self-end">
+            <Link href="/resources"> View more{"..."} </Link>
+          </button>
         </div>
       </section>
     </main>

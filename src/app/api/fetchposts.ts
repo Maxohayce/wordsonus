@@ -7,6 +7,7 @@ type Post = {
   id: string;
   title: string;
   excerpt: string;
+  content: string;
   slug: string;
   date: string;
   featuredImage: {
@@ -31,6 +32,7 @@ export async function getPosts(): Promise<Post[]> {
           id
           title
           excerpt
+          content
           slug
           date
           featuredImage {

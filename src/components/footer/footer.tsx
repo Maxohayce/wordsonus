@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import Newsletter from "../newsletter/newsletter";
 
 const Services = [
   "Content Strategy",
@@ -25,26 +26,11 @@ const ContactUs = [
 export default function Footer() {
   return (
     <footer className="w-full  flex flex-col item-center">
-      <section className="flex flex-col xl:flex-row justify-around item-center xl:justify-between bg-[#800117] h-72 px-4 xl:px-32 xl:items-center">
-        <div className="flex flex-col justify-start  h-20 w-full text-white xl:w-1/2">
-          <p className="text-xl text-start">STAY UP TO DATE</p>
-          <h3 className="text-4xl mt-2">Subscribe to our Newsletter</h3>
-        </div>
-        <div className="w-full xl:w-1/2 flex">
-          <input
-            type="text"
-            className="p-5 w-2/3"
-            placeholder="perfectman@gmail.com"
-          ></input>
-          <button className="p-5 bg-black text-white w-1/3 xl:w-52">
-            Subscribe
-          </button>
-        </div>
-      </section>
+      <Newsletter />
       <section className="flex flex-col xl:flex-row justify-between xl:items-start p-8 xl:p-32">
         <div className="container-custom p-3 flex flex-col items-center">
           <Link href="/">
-            <Image src="/images/logo.jpg" alt="logo" width={49} height={47} />
+            <Image src="/images/logo.jpg" alt="logo" width={50} height={50} />
           </Link>
           <p>Your Ideas our perfection</p>
         </div>

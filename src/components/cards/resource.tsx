@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function Resource({ pic }) {
   return (
-    <div className="flex flex-col items-center justify-center w-[24rem] h-80 my-6 shadow-md">
+    <div className="flex flex-col items-center justify-center max-w-[24rem] h-80 my-6 shadow-md">
       <Image
         alt={"first-resource"}
         src={pic}
