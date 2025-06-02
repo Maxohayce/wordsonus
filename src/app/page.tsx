@@ -42,7 +42,7 @@ export default function Home() {
               <div className="flex relative">
                 <Image
                   alt=""
-                  src="/images/Ellipse 29.png"
+                  src="/images/Ellipse29.png"
                   width={50}
                   height={50}
                   objectFit="contain"
@@ -50,7 +50,7 @@ export default function Home() {
                 />
                 <Image
                   alt=""
-                  src="/images/Ellipse 30.png"
+                  src="/images/Ellipse30.png"
                   width={50}
                   height={50}
                   objectFit="contain"
@@ -58,7 +58,7 @@ export default function Home() {
                 />
                 <Image
                   alt=""
-                  src="/images/Ellipse 31.png"
+                  src="/images/Ellipse31.png"
                   width={50}
                   height={50}
                   objectFit="contain"
@@ -66,7 +66,7 @@ export default function Home() {
                 />
                 <Image
                   alt=""
-                  src="/images/Ellipse 32.png"
+                  src="/images/Ellipse32.png"
                   width={50}
                   height={50}
                   objectFit="contain"
@@ -74,7 +74,7 @@ export default function Home() {
                 />
                 <Image
                   alt=""
-                  src="/images/Ellipse 33.png"
+                  src="/images/Ellipse33.png"
                   width={50}
                   height={50}
                   objectFit="contain"

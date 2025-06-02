@@ -69,7 +69,7 @@ export default function CommentBox({ postId }: { postId: number }) {
               <div className="flex flex-col md:flex-row w-full md:items-start justify-start mt-4 ">
                 <Image
                   alt=" strategy"
-                  src="/images/ellipse 30.png"
+                  src="/images/ellipse30.png"
                   height={50}
                   width={50}
                   className="mb-4"

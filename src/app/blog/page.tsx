@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { useBlog } from "../../context/BlogProvider";
 import Article from "../../components/cards/article";
@@ -8,9 +8,9 @@ import CommentBox from "../../components/commentBox/commentBox";
 
 function decodeGraphQLPostId(encodedId: string): number {
   try {
-    const decoded = atob(encodedId); // e.g., "post:3"
+    const decoded = atob(encodedId);
     const parts = decoded.split(":");
-    return parseInt(parts[1], 10); // returns 3
+    return parseInt(parts[1], 10);
   } catch (error) {
     console.error("Failed to decode post ID:", encodedId, error);
     return NaN;
@@ -20,6 +20,14 @@ function decodeGraphQLPostId(encodedId: string): number {
 export default function BlogPage() {
   const { posts, loading } = useBlog();
   const [selectedPost, setSelectedPost] = useState(null);
+
+  const postRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (selectedPost && postRef.current) {
+      postRef.current.scrollIntoView({ behavior: "smooth" });
+    }
+  }, [selectedPost]);
 
   return (
     <div className="mt-20">
@@ -38,7 +46,10 @@ export default function BlogPage() {
 
       {/* Conditionally Render Selected Article */}
       {selectedPost && (
-        <section className="container px-4 xl:px-36 my-8">
+        <section
+          ref={postRef}
+          className="container px-4 xl:px-36 my-8 scroll-mt-20"
+        >
           <div className="mb-8">
             <h2 className="text-3xl font-bold mb-2">{selectedPost.title}</h2>
             <div className="flex justify-between items-center w-full max-w-[26rem] mt-8 gap-4">
@@ -68,8 +79,8 @@ export default function BlogPage() {
 
             <div className="flex items-center px-6 sm:px-12 md:px-24 lg:px-36 ">
               <Image
-                alt=" strategy"
-                src="/images/ellipse 29.png"
+                alt="strategy"
+                src="/images/ellipse29.png"
                 height={50}
                 width={50}
                 className="object-contain"
