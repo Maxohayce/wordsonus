@@ -60,7 +60,7 @@ export default function BlogPage() {
                 width={40}
                 className="rounded-full"
               />
-              <p className="text-[#80011F]">John Birmingham</p>
+              <p className="text-[#80011F]">{selectedPost.author.node.name}</p>
               <span className="text-gray-400">|</span>
               <p>{new Date(selectedPost.date).toLocaleString()}</p>
             </div>
@@ -87,7 +87,7 @@ export default function BlogPage() {
               />
               <div className="flex flex-col w-full md:w-1/3 items-start justify-center ml-8">
                 <h5>WRITTEN BY</h5>
-                <p>John Birmingham</p>
+                <p>{selectedPost.author.node.name}</p>
                 <p>
                   COO at Team. Author of the upcoming book on Team Management
                   and Leadership.

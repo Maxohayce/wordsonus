@@ -8,8 +8,8 @@ export default function About() {
           <Image
             alt="about"
             src="/images/about.png"
-            fill={true}
-            objectFit="cover"
+            fill
+            style={{ objectFit: "cover" }}
           ></Image>
         </div>
         <h3 className="text-5xl text-white z-20 font-bold absolute">
@@ -34,46 +34,46 @@ export default function About() {
               solutions that communicate their value and elevate their presence
               in their respective industries.
             </p>
-            <span className="h-2 w-24 sm:w-32 bg-[#80011f] rounded-md"></span>
+            <span className="h-2 w-32 bg-[#80011f] rounded-md"></span>
           </div>
           <div className="w-full lg:w-[40%] relative">
             <span className="absolute z-10 h-36 w-56 left-44 md:left-80">
               <Image
                 alt="groupdot"
                 src="/images/groupdot.svg"
-                fill={true}
-                objectFit="cover"
+                fill
+                style={{ objectFit: "cover" }}
               />
             </span>
-            <Image
-              alt="lights"
-              src="/images/lights.png"
-              height={100}
-              width={100}
-              layout="responsive"
-              objectFit="contain"
-              className="z-30 relative"
-            />
+            <div className="h-128 w-full  rounded-lg">
+              <Image
+                alt="lights"
+                src="/images/light.png"
+                fill
+                style={{ objectFit: "contain" }}
+                className="z-30 relative"
+              />
+            </div>
           </div>
         </div>
 
         <div className="flex flex-col md:flex-row justify-between items-center w-full mt-12 gap-8">
           <div className="w-full md:w-3/5 h-auto relative">
-            <span className="absolute z-0 h-36 w-56 top-[26rem] md:top-72 md:right-[34rem]">
+            <span className="absolute z-0 h-36 w-56 top-[26rem] md:top-40 md:right-[34rem]">
               <Image
                 alt="groupdot"
                 src="/images/groupdot.svg"
-                fill={true}
-                objectFit="cover"
+                height={400}
+                width={900}
+                style={{ objectFit: "cover" }}
               />
             </span>
             <Image
               src="/images/woman.png"
               alt="woman"
-              height={100}
-              width={100}
-              layout="responsive"
-              objectFit="contain"
+              height={400}
+              width={900}
+              style={{ objectFit: "contain" }}
               className="relative"
             />
           </div>
@@ -81,10 +81,9 @@ export default function About() {
             <Image
               src="/images/woman2.png"
               alt="woman2"
-              height={100}
-              width={100}
-              layout="responsive"
-              objectFit="cover"
+              height={700}
+              width={500}
+              style={{ objectFit: "cover" }}
             />
           </div>
         </div>

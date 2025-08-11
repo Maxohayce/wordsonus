@@ -27,14 +27,13 @@ export default function Footer() {
   return (
     <footer className="w-full  flex flex-col item-center">
       <Newsletter />
-      <section className="flex flex-col xl:flex-row justify-between xl:items-start p-8 xl:p-32">
+      <section className="flex flex-col xl:flex-row justify-between items-center xl:items-start p-8 xl:p-32">
         <div className="container-custom p-3 flex flex-col items-center">
           <Link href="/">
-            <Image src="/images/logo.jpg" alt="logo" width={50} height={50} />
+            <Image src="/images/logo.png" alt="logo" width={150} height={150} />
           </Link>
-          <p>Your Ideas our perfection</p>
         </div>
-        <div className="pb-6 ">
+        <div className="pb-6 xl:pb-0 ">
           <h5>SERVICES</h5>
           <ul>
             {Services.map((item) => (
@@ -44,7 +43,7 @@ export default function Footer() {
             ))}
           </ul>
         </div>
-        <div className="pb-6">
+        <div className="pb-6 xl:pb-0 ">
           <h5>QUICKLINKS</h5>
           <ul>
             {QuickLinks.map((item) => (
@@ -54,7 +53,7 @@ export default function Footer() {
             ))}
           </ul>
         </div>
-        <div className="pb-6 ">
+        <div className="pb-6 xl:pb-0 ">
           <h5>CONTACT US</h5>
           <ul>
             {ContactUs.map((item) => (
@@ -62,7 +61,7 @@ export default function Footer() {
                 {item}
               </li>
             ))}
-            <div className="flex w-full md:w-4/5 justify-between">
+            <div className="flex w-full md:w-4/5 justify-between pt-1">
               {[
                 {
                   url: "https://www.instagram.com/wordsonus/ ",

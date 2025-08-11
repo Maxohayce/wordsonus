@@ -17,6 +17,7 @@ type Post = {
   excerpt: string;
   slug: string;
   date: string;
+  author: string;
   featuredImage: {
     node: {
       sourceUrl: string;

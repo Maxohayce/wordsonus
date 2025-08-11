@@ -10,6 +10,7 @@ type Post = {
   content: string;
   slug: string;
   date: string;
+  author: string;
   featuredImage: {
     node: {
       sourceUrl: string;
@@ -35,6 +36,11 @@ export async function getPosts(): Promise<Post[]> {
           content
           slug
           date
+          author {
+            node {
+              name
+            }
+          }
           featuredImage {
             node {
               sourceUrl

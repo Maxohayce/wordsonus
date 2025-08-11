@@ -7,7 +7,7 @@ import { Menu, X } from "lucide-react"; // Import icons for the mobile menu togg
 const navItems = [
   { id: 1, label: "Home", href: Routes.home },
   { id: 2, label: "About", href: Routes.about },
-  { id: 3, label: "Services", href: Routes.services },
+  // { id: 3, label: "Services", href: Routes.services },
   { id: 4, label: "Blog", href: Routes.blog },
   { id: 5, label: "Resources", href: Routes.resources },
 ];
@@ -20,7 +20,7 @@ export default function Nav() {
       {/* Logo */}
       <div className="p-3 flex">
         <Link href="/">
-          <Image src="/images/navlogo.png" alt="logo" width={50} height={50} />
+          <Image src="/images/logo.png" alt="logo" width={80} height={80} />
         </Link>
       </div>
 
@@ -34,11 +34,11 @@ export default function Nav() {
               </Link>
             </li>
           ))}
-          <button className="text-white border-2 border-white rounded-3xl py-3 px-12 bg-[#800117] font-bold hover:bg-white hover:text-[#800117]">
-            <Link href="/#contact" scroll={true}>
+          <Link href="/contact" scroll={true}>
+            <button className="text-white border-2 border-white rounded-3xl py-3 px-12 bg-[#800117] font-bold hover:bg-white hover:text-[#800117]">
               Contact Us
-            </Link>
-          </button>
+            </button>
+          </Link>
         </ul>
       </div>
 

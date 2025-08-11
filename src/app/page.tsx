@@ -2,7 +2,7 @@
 
 import Article from "../components/cards/article";
 import Resource from "../components/cards/resource";
-import TestimonialsCarousel from "../components/carousel/TestimonialsCrousel";
+import TestimonialsCarousel from "../components/carousel/TestimonialsCarousel";
 import Image from "next/image";
 import { useBlog } from "../context/BlogProvider";
 import Link from "next/link";
@@ -27,7 +27,7 @@ export default function Home() {
               storytelling
             </h1>
             <p className="w-5/6 md:w-3/6 text-xl">
-              Transform your ideas into compelling narratives with Words On Us,
+              Transform your ideas into compelling narratives with Words on Us,
               the leading content development agency in Lagos, Nigeria.
             </p>
             <div className="w-4/5 md:w-2/5 flex justify-between items-center">
@@ -35,10 +35,10 @@ export default function Home() {
                 Get in Touch
               </button>
               <button className="py-3 px-12 bg-inherit font-bold  border-2 border-white  rounded-3xl text-white hover:text-[#800117] hover:bg-white">
-                Learn more
+                <Link href={"/about"}> Learn more</Link>
               </button>
             </div>
-            <div className="flex w-4/5 md:w-2/5 items-center justify-between">
+            {/* <div className="flex w-4/5 md:w-2/5 items-center justify-between">
               <div className="flex relative">
                 <Image
                   alt=""
@@ -82,7 +82,7 @@ export default function Home() {
                 />
               </div>
               <p>+20k satisfied clients</p>
-            </div>
+            </div> */}
           </div>
         </div>
       </section>
@@ -128,15 +128,15 @@ export default function Home() {
                 alt="group-dot"
                 src="/images/groupdot.svg"
                 fill={true}
-                objectFit="cover"
+                objectFit="contain"
               />
             </div>
             <div className="w-96 z-20 h-128">
               <Image
                 alt="brand"
-                src="/images/brand.png"
+                src="/images/brand.jpg"
                 fill={true}
-                objectFit="contain"
+                objectFit="cover"
               />
             </div>
             <span className="bg-[#800117] rounded-full absolute z-20 h-36 w-36 p-6 text-white top-96 right-80 flex flex-col justify-between items-center">
@@ -159,7 +159,9 @@ export default function Home() {
               professional, the Words on Us team is dedicated to developing
               content that not only engages but also converts.
             </p>
-            <button className="py-3 px-12 bg-[#800117] font-bold  text-white rounded-3xl hover:text-black"></button>
+            <button className="py-3 px-12 bg-[#800117] font-bold  text-white rounded-3xl hover:text-black">
+              <Link href={"/about"}> Learn more</Link>
+            </button>
           </div>
         </div>
       </section>
@@ -190,7 +192,7 @@ export default function Home() {
           </a>
         ))}
       </section>
-      <section className="flex flex-col justify-between items-center px-6 sm:px-12 md:px-24 lg:px-36 text-center h-auto">
+      <section className="flex flex-col justify-between items-center px-6 sm:px-12 md:px-24 lg:px-36 text-center h-auto mt-4">
         <h5>service</h5>
         <h3>What we Offer</h3>
         <p className="md:w-3/4">
@@ -280,7 +282,7 @@ export default function Home() {
                 width={100}
               />
               <h5>
-                Social Media <br /> management
+                Content <br /> management
               </h5>
             </div>
             <p>
@@ -288,6 +290,42 @@ export default function Home() {
               message and turn it into content that people actually enjoy
               reading; whether as social media captions, blog articles,
               newsletters, books or scripts.
+            </p>
+          </div>
+          <div className="w-96 h-80 bg-white flex flex-col justify-evenly items-center shadow-xl text-start rounded-sm px-8 mb-12">
+            <div className="flex justify-around items-center w-full">
+              <Image
+                alt="strategy"
+                src="/images/Mic.svg"
+                height={100}
+                width={100}
+              />
+              <h5>
+                Voice-over <br /> creation
+              </h5>
+            </div>
+            <p>
+              We’ll provide consultation services to help you develop an
+              effective social media strategy, and train your team to capture
+              the moments that make an impact on viewers’ minds.
+            </p>
+          </div>
+          <div className="w-96 h-80 bg-white flex flex-col justify-evenly items-center shadow-xl text-start rounded-sm px-8 mb-12">
+            <div className="flex justify-around items-center w-full">
+              <Image
+                alt="strategy"
+                src="/images/Design.svg"
+                height={100}
+                width={100}
+              />
+              <h5>
+                graphic <br /> Design
+              </h5>
+            </div>
+            <p>
+              We’ll provide consultation services to help you develop an
+              effective social media strategy, and train your team to capture
+              the moments that make an impact on viewers’ minds.
             </p>
           </div>
         </div>
@@ -306,7 +344,7 @@ export default function Home() {
               individuals express their message with clarity, creativity, and
               strategy.
             </p>
-            <button className="py-3 px-12 bg-[#800117] text-white rounded-3xl"></button>
+            <button className="h-2 w-32 bg-[#800117] text-white rounded-3xl"></button>
           </div>
           <div className="relative">
             <span className="absolute z-0 h-56 w-36 top-72 left-72">
@@ -343,7 +381,7 @@ export default function Home() {
       </section>
       <section className="flex flex-col items-center">
         <TestimonialsCarousel />
-        <div className="flex flex-col justify-between items-center ">
+        <div className="flex flex-col justify-between items-center mt-4">
           <h5>blog</h5>
           <h3>Our Recent News</h3>
           <p>Stay up-to-date with Industry Insights</p>
