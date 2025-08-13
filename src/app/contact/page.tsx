@@ -80,18 +80,20 @@ export default function ContactForm() {
           onChange={handleChange}
           required
         />
-        <textarea
-          name="message"
-          id="contactMessage"
+
+        <input
+          type="text"
+          name="contactMessage"
+          placeholder="How can we help you?"
           className="w-full border p-2 rounded"
           value={formData.contactMessage}
           onChange={handleChange}
-          placeholder="How can we help you?"
           required
-        ></textarea>
+        />
+
         <button
           type="submit"
-          className="w-full bg-[#800117] text-white p-2 rounded hover:text-[#800117] hover:bg-white border-2 border-[#800117]"
+          className="w-full bg-[#800117] text-white p-2 rounded-3xl hover:text-[#800117] hover:bg-white border-2 border-[#800117]"
         >
           Submit
         </button>
