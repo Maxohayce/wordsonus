@@ -19,6 +19,7 @@ export async function POST(req: NextRequest) {
       {
         email_address: email,
         status: "subscribed",
+        tags: ["Newsletter"],
       }
     );
 

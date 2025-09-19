@@ -273,7 +273,7 @@ export default function Home() {
               and services.
             </p>
           </div>
-          <div className="w-96 h-80 bg-white flex flex-col justify-evenly items-center shadow-xl text-start rounded-sm px-12">
+          <div className="w-96 h-80 bg-white flex flex-col justify-evenly items-center shadow-xl text-start rounded-sm px-12 mb-12">
             <div className="flex justify-around items-center w-full">
               <Image
                 alt="writing"

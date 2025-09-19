@@ -81,8 +81,7 @@ export default function ContactForm() {
           required
         />
 
-        <input
-          type="text"
+        <textarea
           name="contactMessage"
           placeholder="How can we help you?"
           className="w-full border p-2 rounded"

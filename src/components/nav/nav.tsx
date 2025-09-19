@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Routes } from "./routes";
 import { Menu, X } from "lucide-react"; // Import icons for the mobile menu toggle
+import { AnimatePresence, motion } from "framer-motion";
 
 const navItems = [
   { id: 1, label: "Home", href: Routes.home },
@@ -51,23 +52,31 @@ export default function Nav() {
       </button>
 
       {/* Mobile Menu */}
-      {isOpen && (
-        <div className="absolute top-20 left-0 w-full bg-black text-white flex flex-col items-center py-4 md:hidden">
-          {navItems.map((item) => (
-            <Link
-              key={item.id}
-              href={item.href}
-              className="py-2 hover:text-gray-400"
-              onClick={() => setIsOpen(false)}
-            >
-              {item.label}
-            </Link>
-          ))}
-          <button className="mt-4 text-white border-2 border-white rounded-3xl py-2 px-6 bg-[#800117]">
-            <Link href="/#contact">Contact Us</Link>
-          </button>
-        </div>
-      )}
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            initial={{ scale: 0, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            exit={{ scale: 0, opacity: 0 }}
+            transition={{ duration: 0.5, type: "spring" }}
+            className="absolute top-20 left-0 w-full bg-black text-white flex flex-col items-center py-4 md:hidden"
+          >
+            {navItems.map((item) => (
+              <Link
+                key={item.id}
+                href={item.href}
+                className="py-2 hover:text-gray-400"
+                onClick={() => setIsOpen(false)}
+              >
+                {item.label}
+              </Link>
+            ))}
+            <button className="mt-4 text-white border-2 border-white rounded-3xl py-2 px-6 bg-[#800117]">
+              <Link href="/contact">Contact Us</Link>
+            </button>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </nav>
   );
 }
