@@ -38,7 +38,7 @@ export async function POST(req: Request) {
       { message: "Contact details sent to Mailchimp successfully." },
       { status: 200 }
     );
-  } catch (error: any) {
+  } catch (error) {
     console.error("Mailchimp Error:", error.response?.body || error.message);
     return NextResponse.json(
       { message: "Error sending to Mailchimp", error: error.message },
